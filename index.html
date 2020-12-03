@@ -1,19 +1,42 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Cloud Cafe</h1>
 
-        <h1>Cloud Cafe</h1>
+    <div class="content">
+      <form id="add-cafe-form"></form>
 
-        <div class="content">
+      <ul id="cafe-list"></ul>
+    </div>
 
-            <form id="add-cafe-form"></form>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
 
-            <ul id="cafe-list"></ul>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
 
-        </div>
-
-        <script src="app.js"></script>
-    </body>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiMlbwX8M9PH0wJ5R-Rv9J5_r1Fi9oitQ",
+        authDomain: "test-firestore-255a8.firebaseapp.com",
+        projectId: "test-firestore-255a8",
+        storageBucket: "test-firestore-255a8.appspot.com",
+        messagingSenderId: "223927057258",
+        appId: "1:223927057258:web:2edeca2e96f9b07d7e4313",
+        measurementId: "G-N22GHKNK8R",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      db.settings({ timestampsInSnapshots: true });
+      firebase.analytics();
+    </script>
+    <script src="app.js"></script>
+  </body>
 </html>
