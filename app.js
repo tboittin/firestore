@@ -29,6 +29,7 @@ function renderCafe(doc) {
 
 // getting data
 db.collection("cafes")
+  //   .where("city", "==", "MarioLand")
   .get()
   .then((snapshot) => {
     snapshot.docs.forEach((doc) => {
