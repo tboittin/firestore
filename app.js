@@ -29,7 +29,8 @@ function renderCafe(doc) {
 
 // getting data
 db.collection("cafes")
-  //   .where("city", "==", "MarioLand")
+  .where("city", "==", "MarioLand") // add a query
+  .orderBy("name")
   .get()
   .then((snapshot) => {
     snapshot.docs.forEach((doc) => {
